@@ -4,7 +4,6 @@
     <% @posts.each do |post| %>
     <div class="col-xs-12 col-sm-4">
 
-      <ul class="list-unstyled">
         <h3><%= link_to post_path(post) do %></h3>
         <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/600x4<%= rand(10..99)%>/?business');">
 
@@ -18,7 +17,6 @@
 
         </div>
         <% end %>
-      </ul>
 
     </div>
     <%end%>
