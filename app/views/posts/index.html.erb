@@ -2,23 +2,24 @@
 <div class="container">
   <div class="row">
     <% @posts.each do |post| %>
-    <div class="col-xs-12 col-sm-4">
+      <div class="col-xs-12 col-sm-4">
 
         <h3><%= link_to post_path(post) do %></h3>
-        <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/600x4<%= rand(10..99)%>/?business');">
+          <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/600x4<%= rand(10..99)%>/?business');">
 
-          <div class="card-category"><%= post.title %></div>
+            <div class="card-category"><%= post.title %></div>
 
-          <div class="card-mission">
-            <ul> <li><% post.employee_skill %></li>
-              <li> <%= post.date_begin  %> - <%= post.date_end %></li>
-            </ul>
+            <div class="card-mission">
+              <ul>
+                <li><% post.employee_skill %></li>
+                <li> <%= post.date_begin  %> - <%= post.date_end %></li>
+              </ul>
+            </div>
+
           </div>
-
-        </div>
         <% end %>
 
-    </div>
+      </div>
     <%end%>
   </div>
 </div>
