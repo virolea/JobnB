@@ -16,6 +16,17 @@ ActiveRecord::Schema.define(version: 20160215152308) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "posts", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "date_begin"
+    t.datetime "date_end"
+    t.string   "employee_name"
+    t.string   "employee_skill"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
