@@ -4,14 +4,14 @@
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
       <p id="notice"><%= notice %></p>
       <%= simple_form_for @post do |f| %>
-      <%= f.error_notification %>
-      <%= f.input :title %>
-      <%= f.input :description %>
-      <%= f.input :employee_name %>
-      <%= f.input :employee_skill %>
-      <%= f.input :date_begin %>
-      <%= f.input :date_end %>
-      <%= f.button :submit, class: "btn btn-primary btn-block" %>
+        <%= f.error_notification %>
+        <%= f.input :title %>
+        <%= f.input :description %>
+        <%= f.input :employee_name %>
+        <%= f.input :employee_skill %>
+        <%= f.input :date_begin %>
+        <%= f.input :date_end %>
+        <%= f.button :submit, class: "btn btn-primary btn-block" %>
       <% end %>
     </div>
   </div>
