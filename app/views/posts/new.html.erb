@@ -9,11 +9,26 @@
         <%= f.input :description, required: false %>
         <%= f.input :employee_name, required: false %>
         <%= f.input :employee_skill, required: false %>
-        <%= f.input :date_begin, input_html: { "data-provide" => "datepicker" }, as: :text, required: false %>
-        <%= f.input :date_end, input_html: { "data-provide" => "datepicker" }, as: :string, required: false %>
+        <%= f.input :date_begin, as: :string, input_html: { :class => "datepicker_begin", "data-provide" => "datepicker"}, required: false %>
+        <%= f.input :date_end, as: :string, input_html: { :class => "datepicker_end", "data-provide" => "datepicker"}, required: false %>
         <%= f.button :submit, class: "btn btn-primary btn-block" %>
       <% end %>
     </div>
   </div>
 </div>
 
+<%= content_for(:after_js) do %>
+<script>
+  $('.datepicker_begin').datepicker({
+    format: "yyyy/MM/dd",
+    todayHighlight: true,
+    toggleActive: true
+  });
+
+  $('.datepicker_end').datepicker({
+    format: "yyyy/MM/dd",
+    todayHighlight: true,
+    toggleActive: true
+  });
+</script>
+<% end %>
