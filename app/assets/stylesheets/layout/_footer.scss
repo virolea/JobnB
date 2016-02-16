@@ -1,1 +1,41 @@
 // Your footer style
+
+.footer {
+  flex: 0 0 100px;
+  // padding: 15px;
+  align-self: stretch;
+  background-color: $gray-darker;
+}
+.media-section {
+  margin: 40px auto;
+}
+
+.share-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.share-link {
+  flex: 0 0 24%;
+  color: white;
+  font-size: 18px;
+  padding: 10px 0;
+  text-align: center;
+  border-radius: 2px;
+  cursor: pointer;
+  &:hover {
+    color: $gray-darker;
+  }
+}
+.bg-text {
+  background: #4a4a4a;
+}
+.bg-email {
+  background: #aeaeae;
+}
+.bg-twitter {
+  background: #00a3e1;
+}
+.bg-facebook {
+  background: #3b5998;
+}

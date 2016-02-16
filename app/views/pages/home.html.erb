@@ -1,2 +1,39 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<%= render "shared/banner"  %>
+<div class="wrapper features">
+  <div class="container text-center">
+    <div class="row">
+    <div class="col-xs-12 col-sm-4">
+        <div class="card">
+          <h2 class="text-center">1.</h2>
+          <p>Donner de la flexibilité à votre masse salariale</p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card">
+          <h2 class="text-center">2.</h2>
+          <p>Trouver rapidement des compétences expertes selon vos besoins</p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card">
+          <h2 class="text-center"> 3.</h2>
+          <p>Accélérez le développement de votre entreprise avec un minimum de risques</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="wrapper missions">
+  <div class="container text-center padded">
+    <h2>Un aperçu des missions disponibles</h2>
+    <div class="row">
+      <% @posts[0..2].each do |p| %>
+      <%= render "shared/post", post: p %>
+      <% end %>
+    </div>
+    <div><h3><%= link_to "See more missions", posts_path %></h3>
+    </div>
+  </div>
+</div>
+
+
