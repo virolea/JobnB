@@ -6,4 +6,5 @@ class User < ActiveRecord::Base
 
   has_many :purchases, :class_name => 'Mission', :foreign_key => 'buyer_user_id'
   has_many :sales, :class_name => 'Mission', :foreign_key => 'seller_user_id'
+  has_many :posts
 end
