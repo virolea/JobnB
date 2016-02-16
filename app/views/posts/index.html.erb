@@ -8,8 +8,11 @@
             <h3><%= post.title %></h3></div>
             <div class="card-mission">
               <ul class="list-unstyled">
+                <li> Job Title: <strong> <%= post.title %> </strong></li>
+                <li> Jobber's name: <strong> <%= post.employee_name %> </strong></li>
                 <li>Skill: <strong><%= post.employee_skill %></strong></li>
-                <li>Availability: <strong><%= post.date_begin.strftime("%B %Y")  %> - <%= post.date_end.strftime("%B %Y") %></strong></li>
+                <li>Availability: <strong> <%= post.date_begin.strftime("%B %Y")  %> - <%= post.date_end.strftime("%B %Y") %></strong></li>
+                <li> Short Description of the Job: <strong> <%=post.description %> </strong></li>  
               </ul>
                </div>
               <div class="link text-center">
