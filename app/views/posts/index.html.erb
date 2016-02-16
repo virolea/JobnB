@@ -1,21 +1,25 @@
+<div class="container index">
 <h1 class="text-center">All Posts</h1>
-<div class="container">
   <div class="row">
     <% @posts.each do |post| %>
       <div class="col-xs-12 col-sm-4">
-        <h3><%= link_to post_path(post) do %></h3>
           <div class="card">
-            <div class="card-category"><%= post.title %></div>
+            <div class="card-category">
+            <h3><%= post.title %></h3></div>
             <div class="card-mission">
-              <ul>
+              <ul class="list-unstyled">
                 <li>Skill: <strong><%= post.employee_skill %></strong></li>
-                <li>Duration: <strong><%= post.date_begin  %> - <%= post.date_end %></strong></li>
+                <li>Availability: <strong><%= post.date_begin.strftime("%B %Y")  %> - <%= post.date_end.strftime("%B %Y") %></strong></li>
               </ul>
+               </div>
+              <div class="link text-center">
+              <%= link_to "See more", post_path(post), class: "btn btn-danger btn-sm" %>
             </div>
           </div>
-        <% end %>
       </div>
     <%end%>
   </div>
 </div>
 </div>
+
+
