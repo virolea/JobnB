@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root to: 'pages#home'
+  get 'omniauth_callbacks_controller/facebook'
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
+<<<<<<< HEAD
   resources :posts, only: [:index, :show, :new, :create, :delete] do
     resources :missions, only: [:create]
   end
@@ -45,18 +46,11 @@ Rails.application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
+=======
+  root to: 'pages#home'
+  resources :posts, only: [:index, :show, :new, :create, :delete]
+>>>>>>> master
 
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
+  get 'dashboard', to: 'pages#dashboard'
 
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
 end
