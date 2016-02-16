@@ -1,26 +1,25 @@
+<div class="container index">
 <h1 class="text-center">All Posts</h1>
-<div class="container">
   <div class="row">
     <% @posts.each do |post| %>
       <div class="col-xs-12 col-sm-4">
-
-        <h3><%= link_to post_path(post) do %></h3>
-          <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/600x4<%= rand(10..99)%>/?business');">
-
-            <div class="card-category"><%= post.title %></div>
-
+          <div class="card">
+            <div class="card-category">
+            <h3><%= post.title %></h3></div>
             <div class="card-mission">
-              <ul>
-                <li><% post.employee_skill %></li>
-                <li> <%= post.date_begin  %> - <%= post.date_end %></li>
+              <ul class="list-unstyled">
+                <li>Skill: <strong><%= post.employee_skill %></strong></li>
+                <li>Availability: <strong><%= post.date_begin.strftime("%B %Y")  %> - <%= post.date_end.strftime("%B %Y") %></strong></li>
               </ul>
+               </div>
+              <div class="link text-center">
+              <%= link_to "See more", post_path(post), class: "btn btn-danger btn-sm" %>
             </div>
-
           </div>
-        <% end %>
-
       </div>
     <%end%>
   </div>
 </div>
 </div>
+
+
