@@ -1,5 +1,4 @@
 class User < ActiveRecord::Base
-  has_many :posts
 
   validates :user_id, presence: true
 
@@ -10,8 +9,6 @@ class User < ActiveRecord::Base
   has_many :purchases, class_name: 'Mission', foreign_key: 'buyer_user_id'
   has_many :sales, class_name: 'Mission', foreign_key: 'seller_user_id'
   has_many :posts
-         :recoverable, :rememberable, :trackable, :validatable,
-         :omniauthable, omniauth_providers: [:facebook]
 
   def self.find_for_facebook_oauth(auth)
 		where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -26,5 +23,4 @@ class User < ActiveRecord::Base
 		  user.token_expiry = Time.at(auth.credentials.expires_at)
 		end
 	end
->>>>>>> master
 end
