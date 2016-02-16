@@ -16,6 +16,9 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
 
+# facebook connect gem
+gem 'omniauth-facebook'
+
 gem 'devise'
 
 group :development, :test do
