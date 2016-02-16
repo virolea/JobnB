@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   has_many :posts
 
+  validates :user_id, presence: true
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: [:facebook]
