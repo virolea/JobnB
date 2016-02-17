@@ -7,6 +7,8 @@ class PostsController < ApplicationController
   end
 
   def show
+    @user = @post.user
+    @user_coordinates = { lat: @user.latitude, lng: @user.longitude } unless @user.latitude.nil?
   end
 
   def new
@@ -16,6 +18,9 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user = current_user
+    @user = @post.user
+    @user.address = @post.address
+    @user.save
     if @post.save
       redirect_to post_path(@post)
     else
@@ -30,7 +35,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :description, :date_begin, :date_end, :employee_skill, :employee_name)
+    params.require(:post).permit(:title, :description, :date_begin, :date_end, :employee_skill, :employee_name, :address)
   end
 
   def set_post
