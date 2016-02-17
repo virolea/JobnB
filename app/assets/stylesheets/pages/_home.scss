@@ -5,7 +5,7 @@
 .banner {
   color: white;
   text-align: center;
-  height: 80vh;
+  height: 85vh;
   background-size: cover !important;
   display: flex;
   align-items: center;
@@ -25,6 +25,11 @@
 
 .features {
   margin: 150px;
+}
+
+.feature {
+  height: 200px;
+  width: 300px;
 }
 
 .missions {
