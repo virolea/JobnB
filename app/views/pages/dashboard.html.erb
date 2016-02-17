@@ -19,17 +19,6 @@
             <% end %>
           <% end %>
       </div>
-      <div class="offers">
-        <p class="panel-title">My enquiries</p>
-          <div class="panel-info">
-            <% if current_user.posts.count > 0 %>
-              <% current_user.posts.each do |post| %>
-                <h4><%= post.title %></h4>
-                <p><%= post.description %></p>
-              <% end %>
-            <% end %>
-          </div>
-      </div>
     </div>
   </div>
 </div>
