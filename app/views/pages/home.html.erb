@@ -1,22 +1,21 @@
 <%= render "shared/banner"  %>
-<div class="wrapper features">
+<div class="wrapper">
   <div class="container text-center">
     <div class="row">
     <div class="col-xs-12 col-sm-4">
-        <div class="card">
+        <div class="feature">
           <%= image_tag "onefinger.png", {class: "pic-counter1", id: "logo"}%>
-
           <p>Donner de la flexibilité à votre masse salariale</p>
         </div>
       </div>
       <div class="col-xs-12 col-sm-4">
-        <div class="card">
+        <div class="feature">
           <%= image_tag "twofingers.png", {class: "pic-counter", id: "logo"}%>
           <p>Trouver rapidement des compétences expertes selon vos besoins</p>
         </div>
       </div>
       <div class="col-xs-12 col-sm-4">
-        <div class="card">
+        <div class="feature">
           <%= image_tag "threefingers.png", {class: "pic-counter", id: "logo"}%>
 
           <p>Accélérez le développement de votre entreprise avec un minimum de risques</p>
@@ -33,7 +32,7 @@
       <%= render "shared/post", post: p %>
       <% end %>
     </div>
-    <div><h3><%= link_to "See more missions", posts_path, class: "btn btn-danger btn-lg"  %></h3>   
+    <div><h3><%= link_to "See more missions", posts_path, class: "navbar-wagon-item navbar-wagon-button btn"  %></h3>
     </div>
   </div>
 </div>
