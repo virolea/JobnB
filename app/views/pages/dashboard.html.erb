@@ -8,16 +8,37 @@
       </div>
     </div>
     <div class="col-xs-12 col-md-9">
+      <div class="container-fluid">
       <div class="offers">
-        <p class="panel-title">My employees available for hire</p>
-          <% if current_user.posts.count > 0 %>
+        <div class="row">
+
+            <div class="panel-title">
+              <p>My employees available for hire</p>
+            </div>
+
             <% current_user.posts.each do |post| %>
-              <div class="panel-info">
-                <h4><%= link_to post.title, post_path(post) %></h4>
-                <p><%= post.description %></p>
+              <div class="col-cs-12 col-md-6">
+                <div class="card">
+                  <div class="card-category">
+                  <h3><%= post.title %></h3></div>
+                  <div class="card-mission">
+                    <ul class="list-unstyled">
+                      <li> Job Title: <strong> <%= post.title %> </strong></li>
+                      <li> Jobber's name: <strong> <%= post.employee_name %> </strong></li>
+                      <li>Skill: <strong><%= post.employee_skill %></strong></li>
+                      <li>Availability: <strong> <%= post.date_begin.strftime("%B %Y")  %> - <%= post.date_end.strftime("%B %Y") %></strong></li>
+                      <li> Short Description of the Job: <strong> <%=post.description %> </strong></li>
+                    </ul>
+                     </div>
+                    <div class="link text-center">
+                    <%= link_to "See more", post_path(post), class: "btn btn-danger btn-sm" %>
+                  </div>
+                </div>
               </div>
             <% end %>
-          <% end %>
+
+          </div>
+        </div>
       </div>
     </div>
   </div>
