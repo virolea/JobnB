@@ -20,6 +20,7 @@ gem 'autoprefixer-rails'
 gem 'omniauth-facebook'
 
 gem 'devise'
+gem "geocoder"
 
 source "https://rails-assets.org" do
   gem 'rails-assets-bootstrap-datepicker'

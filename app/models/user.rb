@@ -10,6 +10,9 @@ class User < ActiveRecord::Base
   has_many :sales, class_name: 'Mission', foreign_key: 'seller_user_id'
   has_many :posts
 
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
+
   def self.find_for_facebook_oauth(auth)
 		where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
 		  user.provider = auth.provider
