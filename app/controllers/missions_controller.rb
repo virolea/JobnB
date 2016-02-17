@@ -1,6 +1,9 @@
 class MissionsController < ApplicationController
   before_action :set_post, only: [:create]
 
+  def new
+  end
+
   def create
     @mission = Mission.new
     @mission.buying_user = current_user
