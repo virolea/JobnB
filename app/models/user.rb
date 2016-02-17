@@ -1,9 +1,14 @@
 class User < ActiveRecord::Base
-  has_many :posts
 
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable,
+  validates :user_id, presence: true
+
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: [:facebook]
+
+
+  has_many :purchases, class_name: 'Mission', foreign_key: 'buyer_user_id'
+  has_many :sales, class_name: 'Mission', foreign_key: 'seller_user_id'
+  has_many :posts
 
   def self.find_for_facebook_oauth(auth)
 		where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

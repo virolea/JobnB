@@ -11,10 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160216171305) do
+ActiveRecord::Schema.define(version: 20160217095145) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "missions", force: :cascade do |t|
+    t.string   "status"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "selling_user_id"
+    t.integer  "buying_user_id"
+    t.integer  "post_id"
+    t.string   "description"
+  end
+
+  add_index "missions", ["post_id"], name: "index_missions_on_post_id", using: :btree
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
@@ -55,5 +67,6 @@ ActiveRecord::Schema.define(version: 20160216171305) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "missions", "posts"
   add_foreign_key "posts", "users"
 end
