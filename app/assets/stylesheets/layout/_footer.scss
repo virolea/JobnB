@@ -4,7 +4,7 @@
   flex: 0 0 100px;
   // padding: 15px;
   align-self: stretch;
-  background-color: $gray-darker;
+  background-color:white;
 }
 .media-section {
   margin: 40px auto;
@@ -38,4 +38,16 @@
 }
 .bg-facebook {
   background: #3b5998;
+}
+.logo {
+  margin-top: 15px;
+  height:40px;
+  width: 100px; 
+
+}
+.wagon-message {
+  color: white; 
+  &:hover {
+    color: $gray-darker;
+  }
 }
