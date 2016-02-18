@@ -7,4 +7,10 @@ class PagesController < ApplicationController
 
   def dashboard
   end
+
+  def requests
+  end
+
+  def profile
+  end
 end

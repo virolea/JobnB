@@ -5,11 +5,12 @@
 .banner {
   color: white;
   text-align: center;
-  height: 85vh;
+  height: 100vh;
   background-size: cover !important;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 .banner h1 {
   font-size: 50px;
@@ -32,7 +33,11 @@
   color: grey-darker;
 }
 
-.features h2 {
+#wrapper {
+  height: 60vh;
+  background: white;
+}
+.feature h2 {
   font-size: 40px;
   font-weight: bold;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
@@ -40,6 +45,29 @@
   font-weight: bold;
 }
 
+.wrapper h3 {
+  font-size: 40px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  color: black
+}
+
+.carousel-side{
+  height: 50vh;
+
+}
+.carousel-side h3 {
+  font-size: 40px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  color: black;
+  align-items: center;
+}
+ 
 .missions {
   background-color: grey;
 }
@@ -55,4 +83,15 @@
 
 .missions a {
   margin-top: inherit;
+}
+.fa-arrow-down {
+  color: white;
+}
+.arrowd{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 70px;
+  margin-top: 50px;
+
 }

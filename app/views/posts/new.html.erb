@@ -10,13 +10,13 @@
           <%= f.input :description, required: false %>
           <%= f.input :employee_name, required: false %>
           <%= f.input :employee_skill, required: false %>
-          <%= f.input :address, required: false %>
+          <%= f.input :address, input_html: { :id => "user_input_autocomplete_address"}, required: false %>
           <div class="form-group row">
           <div class="col-sm-6">
-            <%= f.input :date_begin, as: :string, input_html: { :class => "datepicker_begin", "data-provide" => "datepicker"}, required: false %>
-          </div>
+          <%= f.input :date_begin, as: :string, input_html: { :class => "datepicker_begin", "data-provide" => "datepicker"}, required: false %>
+           </div>
           <div class="col-sm-6">
-            <%= f.input :date_end, as: :string, input_html: { :class => "datepicker_end", "data-provide" => "datepicker"}, required: false %>
+          <%= f.input :date_end, as: :string, input_html: { :class => "datepicker_end", "data-provide" => "datepicker"}, required: false %>
           </div>
           </div>
           <%= f.input :photo %>
@@ -42,3 +42,8 @@
   });
 </script>
 <% end %>
+
+
+
+
+
