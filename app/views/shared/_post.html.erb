@@ -1,16 +1,14 @@
 <div class="col-xs-12 col-sm-4">
-  <div class="card">
-    <div class="card-category">
-      <h3><%= post.title %></h3>
+    <div class="card">
+      <%= link_to post_path(post) do %>
+        <div class="card-image" style="background-image: url(<%= post.photo.url(:cards) %>)">
+          <div>
+            <p><%= post.description %></p>
+          </div>
+        </div>
+      <% end %>
+      <div class="card-title text-center">
+        <h3><%= post.title %></h3>
+      </div>
     </div>
-    <div class="card-mission">
-      <ul class="list-unstyled">
-        <li>Skill: <strong><%= post.employee_skill %></strong></li>
-        <li>Availability: <strong><%= post.date_begin.strftime("%B %Y")  %> - <%= post.date_end.strftime("%B %Y") %></strong></li>
-      </ul>
-    </div>
-    <div class="link text-center">
-      <%= link_to "See more", post_path(post), class: "btn btn-danger btn-sm" %>
-    </div>
-  </div>
 </div>

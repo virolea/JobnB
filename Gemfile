@@ -23,9 +23,13 @@ gem 'jquery-smooth-scroll-rails', :git => 'git@github.com:gretel/jquery-smooth-s
 gem 'omniauth-facebook'
 
 gem 'devise'
+gem "geocoder"
+gem "coffee-rails"
+gem "gmaps4rails"
 
 source "https://rails-assets.org" do
   gem 'rails-assets-bootstrap-datepicker'
+  gem "rails-assets-underscore"
 end
 
 group :development, :test do

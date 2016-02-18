@@ -25,6 +25,7 @@
     </div>
   </div>
 </div>
+
 </div>
 <div class="row">
   <div class="col-sm-12 text-center">
@@ -65,13 +66,15 @@
 
 <div class="wrapper missions" id="wrapper-missions">
   <div class="container text-center padded">
+
     <h2>Un aperçu des missions disponibles</h2>
     <div class="row">
       <% @posts[0..2].each do |p| %>
       <%= render "shared/post", post: p %>
       <% end %>
     </div>
-    <div><h3><%= link_to "See more missions", posts_path, class: "navbar-wagon-item navbar-wagon-button btn"  %></h3>
+    <div class="text-center">
+      <h3><%= link_to "See more missions", posts_path, class: "navbar-wagon-item navbar-wagon-button btn"  %></h3>
     </div>
   </div>
 </div>

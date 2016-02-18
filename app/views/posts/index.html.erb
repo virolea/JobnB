@@ -1,22 +1,20 @@
+<div id="map-index" style="width: 100%; height: 300px;"></div>
 <div class="container index">
 <h1 class="text-center">All Posts</h1>
   <div class="row">
     <% @posts.each do |post| %>
       <div class="col-xs-12 col-sm-4">
           <div class="card">
-            <div class="card-category">
-            <h3><%= post.title %></h3></div>
-            <div class="card-mission">
-              <ul class="list-unstyled">
-                <li> Job Title: <strong> <%= post.title %> </strong></li>
-                <li> Jobber's name: <strong> <%= post.employee_name %> </strong></li>
-                <li>Skill: <strong><%= post.employee_skill %></strong></li>
-                <li>Availability: <strong> <%= post.date_begin.strftime("%B %Y")  %> - <%= post.date_end.strftime("%B %Y") %></strong></li>
-                <li> Short Description of the Job: <strong> <%=post.description.first(50) + "..." %> </strong></li>
-              </ul>
-               </div>
-              <div class="link text-center">
-              <%= link_to "See more", post_path(post), class: "btn btn-danger btn-sm" %>
+
+            <%= link_to post_path(post) do %>
+              <div class="card-image" style="background-image: url(<%= post.photo.url(:cards) %>)">
+                <div>
+                  <p><%= post.description %></p>
+                </div>
+              </div>
+            <% end %>
+            <div class="card-title text-center">
+              <h3><%= post.title %></h3>
             </div>
           </div>
       </div>
@@ -25,4 +23,15 @@
 </div>
 </div>
 
-
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    $(document).on('ready', function() {
+      handler = Gmaps.build('Google');
+      handler.buildMap({ internal: { id: 'map-index' } }, function(){
+        markers = handler.addMarkers(<%= raw @markers.to_json %>);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+      });
+    })
+  <% end %>
+<% end %>
