@@ -1,3 +1,3 @@
-$(function() {
-	$('a').smoothScroll({ speed: 1000 });
-});
+// $(function() {
+// 	$('a').smoothScroll({ speed: 1000 });
+// });
