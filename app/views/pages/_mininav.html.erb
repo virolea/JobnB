@@ -1,0 +1,38 @@
+<div class="mininav">
+  <div class="mininav-content">
+    <ul class="list-inline">
+      <li>Dashboard</li>
+      <li>Requests</li>
+      <li>Profile</li>
+    </ul>
+  </div>
+</div>
+
+<% if current_page?(action: "dashboard") %>
+  <% content_for(:after_js) do %>
+    <%= javascript_tag do %>
+      $(document).on('ready', function() {
+        $('mininav li').removeClass('selected');
+        $('li:nth-child(1)').addClass('selected');
+      })
+    <% end %>
+  <% end %>
+<% elsif current_page?(action: "requests") %>
+  <% content_for(:after_js) do %>
+    <%= javascript_tag do %>
+      $(document).on('ready', function() {
+        $('mininav li').removeClass('selected');
+        $('li:nth-child(2)').addClass('selected');
+      })
+    <% end %>
+  <% end %>
+<% elsif current_page?(action: "profile") %>
+  <% content_for(:after_js) do %>
+    <%= javascript_tag do %>
+      $(document).on('ready', function() {
+        $('mininav li').removeClass('selected');
+        $('li:nth-child(3)').addClass('selected');
+      })
+    <% end %>
+  <% end %>
+<% end %>

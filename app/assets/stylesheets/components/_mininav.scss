@@ -1,0 +1,15 @@
+.mininav {
+  background: #565A5C;
+  color: white;
+  li {
+    padding: 10px;
+    font-weight: lighter;
+  }
+  ul {
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+}
+.selected {
+  border-bottom: 5px solid #CACCCD;
+}
