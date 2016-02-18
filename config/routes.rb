@@ -6,6 +6,10 @@ Rails.application.routes.draw do
     resources :missions, only: [:new, :create]
   end
 
+  authenticated :user do
+    root to: 'posts#index', as: :authenticated_root
+  end
+
   root to: 'pages#home'
 
   get 'dashboard', to: 'pages#dashboard'
