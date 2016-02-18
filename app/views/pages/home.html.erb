@@ -1,6 +1,7 @@
 <%= render "shared/banner"  %>
-<div class="wrapper">
+<div class="wrapper" id= "wrapper">
   <div class="container text-center">
+      <h3> It's easy as One, Two, Three!!!</h3> 
     <div class="row">
     <div class="col-xs-12 col-sm-4">
         <div class="feature">
@@ -24,7 +25,45 @@
     </div>
   </div>
 </div>
-<div class="wrapper missions">
+</div>
+<div class="row">
+  <div class="col-sm-12 text-center">
+    <h2> What our clients say about us: </h2>
+  </div>
+</div>  
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <div class="carousel-side text-center">
+  <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>
+
+  <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <%= image_tag "Carousel1.png", class: "toto" %>
+      </div>
+      <div class="item">
+        <%= image_tag "Carousel2.png", class: "toto" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Left and right controls -->
+  <!-- <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span> -->
+ <!--  </a> -->
+
+<div class="wrapper missions" id="wrapper-missions">
   <div class="container text-center padded">
     <h2>Un aperçu des missions disponibles</h2>
     <div class="row">
