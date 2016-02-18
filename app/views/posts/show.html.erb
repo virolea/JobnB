@@ -1,26 +1,20 @@
-<div class="container card">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <p id="notice"><%= notice %></p>
+<div class="container post-card">
+  <p id="notice"><%= notice %></p>
 
-      <h2 class="text-center"><%= @post.title %></h2>
+  <h2 class="text-center"><%= @post.title %></h2>
 
-      <ul class="list-unstyled">
-        <li><%= @post.description %></li>
-        <li><%= @post.date_begin %> - <%= @post.date_end %></li>
-      </ul>
+  <p><%= @post.description %></p>
 
-      <hr>
+  <hr>
 
-      <div class="employee">
-        <ul class="list-unstyled">
-          <li><%= @post.employee_name %></li>
-          <li><%= @post.employee_skill %></li>
-        </ul>
-      </div>
+  <div class="employee">
+    <ul class="list-unstyled">
+      <li><strong>Employee Name</strong>: <%= @post.employee_name %></li>
+      <li><strong>Employee Main Skills</strong>: <%= @post.employee_skill %></li>
+    </ul>
+  </div>
 
-      <hr>
-
+<<<<<<< HEAD
       <div class="user-info">
         <ul class="list-unstyled">
           <li>Company name: ...</li>
@@ -29,9 +23,19 @@
         </ul>
       </div>
       <div id="map"></div>
+=======
+  <hr>
+>>>>>>> master
 
-      <%= link_to "I am interested", new_post_mission_path(@post) %>
-    </div>
+  <div class="user-info">
+    <ul class="list-unstyled">
+      <li><strong>Company name</strong>: ...</li>
+      <li><strong>Company specialty</strong>: ...</li>
+      <li><strong>More company infos</strong>: ...</li>
+    </ul>
+  </div>
+  <div class="text-center">
+    <%= link_to "I am interested", new_post_mission_path(@post), class: "btn btn-danger" %>
   </div>
 </div>
 

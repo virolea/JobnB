@@ -12,6 +12,7 @@
         <%= f.input :address, required: false %>
         <%= f.input :date_begin, as: :string, input_html: { :class => "datepicker_begin", "data-provide" => "datepicker"}, required: false %>
         <%= f.input :date_end, as: :string, input_html: { :class => "datepicker_end", "data-provide" => "datepicker"}, required: false %>
+        <%= f.input :photo %>
         <%= f.button :submit, class: "btn btn-primary btn-block" %>
       <% end %>
     </div>
