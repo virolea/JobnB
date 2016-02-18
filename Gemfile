@@ -17,7 +17,7 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'cloudinary'
 gem 'carrierwave'
-gem 'jquery-smooth-scroll-rails', :git => 'git@github.com:gretel/jquery-smooth-scroll-rails.git'
+# gem 'jquery-smooth-scroll-rails', :git => 'git@github.com:gretel/jquery-smooth-scroll-rails.git'
 
 # facebook connect gem
 gem 'omniauth-facebook'
