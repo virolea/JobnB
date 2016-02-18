@@ -10,8 +10,30 @@ body{
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
 }
 .card-image {
+  background: cover;
+  height:200px;
   width: 100%;
+  position: relative;
+  div {
+    position: absolute;
+    padding: 20px;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  div:hover {
+    opacity: 1;
+  }
 }
+
 .card-title {
   padding: 10px;
+  h3 {
+    color: #CE372D;
+  }
 }
