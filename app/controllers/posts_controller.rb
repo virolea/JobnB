@@ -4,6 +4,10 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    @markers = Gmaps4rails.build_markers(@posts) do |post, marker|
+      marker.lat post.user.latitude
+      marker.lng post.user.longitude
+    end
   end
 
   def show
@@ -35,7 +39,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :description, :date_begin, :date_end, :employee_skill, :employee_name, :photo, :photo_cache :address)
+    params.require(:post).permit(:title, :description, :date_begin, :date_end, :employee_skill, :employee_name, :photo, :photo_cache, :address)
   end
 
   def set_post
