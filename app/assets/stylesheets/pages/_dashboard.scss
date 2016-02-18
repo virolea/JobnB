@@ -28,3 +28,11 @@
 .employees row:nth-child(2n+1) {
     background: #CCCCCC;
 }
+
+.requests-list li {
+  padding: 20px;
+}
+.requests-container {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
