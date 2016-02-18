@@ -12,8 +12,8 @@
   <% content_for(:after_js) do %>
     <%= javascript_tag do %>
       $(document).on('ready', function() {
-        $('mininav li').removeClass('selected');
-        $('li:nth-child(1)').addClass('selected');
+        $('.mininav > li').removeClass('selected');
+        $('mininav > li:nth-child(1)').addClass('selected');
       })
     <% end %>
   <% end %>
@@ -21,8 +21,8 @@
   <% content_for(:after_js) do %>
     <%= javascript_tag do %>
       $(document).on('ready', function() {
-        $('mininav li').removeClass('selected');
-        $('li:nth-child(2)').addClass('selected');
+        $('.mininav > li').removeClass('selected');
+        $('mininav > li:nth-child(2)').addClass('selected');
       })
     <% end %>
   <% end %>
@@ -30,8 +30,8 @@
   <% content_for(:after_js) do %>
     <%= javascript_tag do %>
       $(document).on('ready', function() {
-        $('mininav li').removeClass('selected');
-        $('li:nth-child(3)').addClass('selected');
+        $('.mininav > li').removeClass('selected');
+        $('mininav > li:nth-child(3)').addClass('selected');
       })
     <% end %>
   <% end %>

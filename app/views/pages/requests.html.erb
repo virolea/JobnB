@@ -10,7 +10,7 @@
         </div>
         <div>
           <ul class="list-unstyled requests-list">
-            <% Mission.where(id: current_user.id).each do |mission| %>
+            <% Mission.where(selling_user_id: current_user.id).each do |mission| %>
               <li>
                 <div class="row">
                   <div class="col-xs-3">

@@ -25,14 +25,15 @@
 .employees {
   padding: 20px;
 }
-.employees row:nth-child(2n+1) {
-    background: #CCCCCC;
-}
 
 .requests-list li {
+  border-left: 5px solid #565A5C;
+  margin-top: 10px;
+  margin-bottom: 10px;
   padding: 20px;
+  color: rgba(0,0,0,0.8)
 }
 .requests-container {
-  margin-top: 100px;
-  margin-bottom: 100px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
