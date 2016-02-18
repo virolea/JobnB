@@ -9,7 +9,7 @@ function initializeAutocomplete(id) {
 function onPlaceChanged() {
   var place = this.getPlace();
 
-  console.log(place);  // Uncomment this line to view the full object returned by Google API.
+  //console.log(place);  // Uncomment this line to view the full object returned by Google API.
 
   for (var i in place.address_components) {
     var component = place.address_components[i];
