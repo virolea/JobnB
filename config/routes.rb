@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   resources :posts, only: [:index, :show, :new, :create, :delete] do
-    resources :missions, only: [:new, :create]
+    resources :missions, only: [:new, :create, :edit, :update]
   end
 
   authenticated :user do
