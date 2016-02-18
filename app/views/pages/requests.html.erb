@@ -1,0 +1,26 @@
+<%= render 'mininav' %>
+
+<div class="container">
+  <div class="dashboard-container">
+    <div class="row">
+      <div class="col-xs-12 col-md-8 col-md-offset-2">
+        <div class="container-fluid">
+        <div class="offers">
+          <div class="row">
+            <div class="offers">
+              <div class="panel-header">
+                My requests pending
+              </div>
+
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% Mission.where(id: current_user.id).each do |mission| %>
+<%= mission.description %>
+<% end %>
