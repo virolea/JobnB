@@ -4,11 +4,14 @@
     <% @posts.each do |post| %>
       <div class="col-xs-12 col-sm-4">
           <div class="card">
-            <div class="card-image" style="background-image: url('<%= post.photo %>')">
-              <div>
-                <p><%= post.description.first(50) %></p>
+
+            <%= link_to post_path(post) do %>
+              <div class="card-image" style="background-image: url(<%= post.photo.url(:cards) %>)">
+                <div>
+                  <p><%= post.description %></p>
+                </div>
               </div>
-            </div>
+            <% end %>
             <div class="card-title text-center">
               <h3><%= post.title %></h3>
             </div>
