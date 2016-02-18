@@ -20,4 +20,8 @@ class PhotoUploader < CarrierWave::Uploader::Base
   version :cards do
     cloudinary_transformation width: 320, height: 250, crop: :fill
   end
+
+  version :avatar do
+    cloudinary_transformation width: 80, height: 80, crop: :fill
+  end
 end

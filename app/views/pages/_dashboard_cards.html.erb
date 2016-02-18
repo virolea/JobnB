@@ -1,0 +1,16 @@
+<% current_user.posts.each do |post| %>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="employees">
+        <div class="row">
+          <div class="col-xs-12 col-sm-3">
+           <%= image_tag post.photo.url(:avatar) %>
+          </div>
+          <div class="col-xs-12 col-sm-9">
+            <%= post.description.first(100) + '...' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
