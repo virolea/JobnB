@@ -1,6 +1,6 @@
 <div class="container post-card">
   <p id="notice"><%= notice %></p>
-
+  <%= cl_image_tag @post.photo, height: 300, width: 400, crop: :fill %>
   <h2 class="text-center"><%= @post.title %></h2>
 
   <p><%= @post.description %></p>
