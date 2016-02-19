@@ -19,17 +19,29 @@ class MissionsController < ApplicationController
   def accept
     @mission = Mission.find(params[:id])
     @mission.status = "accepted"
-    @mission.save
-
-    redirect_to requests_path
+    if @mission.save
+      respond_to do |format|
+        format.html { redirect_to requests_path }
+        format.js
+      end
+    else
+      format.html { render 'requests' }
+      format.js  # <-- idem
+    end
   end
 
   def decline
     @mission = Mission.find(params[:id])
     @mission.status = "declined"
-    @mission.save
-
-    redirect_to requests_path
+    if @mission.save
+      respond_to do |format|
+        format.html { redirect_to requests_path }
+        format.js
+      end
+    else
+      format.html { render 'requests' }
+      format.js  # <-- idem
+    end
   end
 
   private
