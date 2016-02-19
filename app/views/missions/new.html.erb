@@ -1,4 +1,10 @@
-<%= simple_form_for([@post, @mission]) do |f| %>
-<%= f.input :description %>
-<%= f.button :submit %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <%= simple_form_for([@post, @mission]) do |f| %>
+        <%= f.input :description %>
+        <%= f.button :submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
