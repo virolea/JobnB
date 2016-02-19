@@ -73,6 +73,14 @@
   align-items: center;
 }
  
+ #wrapper-missions {
+   position: relative;
+   bottom: -500px;
+ }
+
+ .no-margin {
+   margin: 0;
+ }
 .missions {
   background-color: grey;
 }
