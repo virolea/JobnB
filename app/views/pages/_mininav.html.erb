@@ -3,7 +3,7 @@
     <ul class="list-inline">
       <li><%= link_to "Dashboard", dashboard_path %></li>
       <li><%= link_to "Requests Pending", requests_path %></li>
-      <li>Requests treated</li>
+      <li><%= link_to "Requests Treated", treated_path %></li>
     </ul>
   </div>
 </div>
@@ -26,7 +26,7 @@
       })
     <% end %>
   <% end %>
-<% elsif current_page?(action: "profile") %>
+<% elsif current_page?(action: "treated") %>
   <% content_for(:after_js) do %>
     <%= javascript_tag do %>
       $(document).on('ready', function() {

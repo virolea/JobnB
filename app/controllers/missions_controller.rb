@@ -16,6 +16,34 @@ class MissionsController < ApplicationController
     redirect_to post_path(@post)
   end
 
+  def accept
+    @mission = Mission.find(params[:id])
+    @mission.status = "accepted"
+    if @mission.save
+      respond_to do |format|
+        format.html { redirect_to requests_path }
+        format.js
+      end
+    else
+      format.html { render 'requests' }
+      format.js  # <-- idem
+    end
+  end
+
+  def decline
+    @mission = Mission.find(params[:id])
+    @mission.status = "declined"
+    if @mission.save
+      respond_to do |format|
+        format.html { redirect_to requests_path }
+        format.js
+      end
+    else
+      format.html { render 'requests' }
+      format.js  # <-- idem
+    end
+  end
+
   private
 
   def set_post
