@@ -33,12 +33,16 @@
             <%= link_to post_path(post) do %>
               <div class="card-image" style="background-image: url(<%= post.photo.url(:cards) %>)">
                 <div>
-                  <p><%= post.description %></p>
+                  <p><%= post.description.first(50) %></p>
                 </div>
               </div>
             <% end %>
             <div class="card-title text-center">
               <h3><%= post.title %></h3>
+            </div>
+            <div class="card-user">
+              <%= image_tag post.user.picture, class: "avatar" %>
+              <%= post.user.first_name %>
             </div>
           </div>
       </div>
