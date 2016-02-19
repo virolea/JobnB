@@ -1,5 +1,36 @@
  #map {
         display: flex;
-        height: 100vh;
+        height: 50vh;
         width: 100%;
       }
+
+.red {
+  color: #D23333;
+  font-size: 20px;
+  line-height: 2;
+  margin-right: 20px;
+}
+
+.infos {
+  margin: 40px 0;
+}
+
+.infos p {
+  color: $gray;
+}
+
+.description {
+  margin-bottom: 50px;
+}
+
+hr {
+  margin: 20px 0;
+}
+
+.header h2 {
+  margin-left: 80px;
+}
+
+.employee li {
+  padding: 10px 0;
+}

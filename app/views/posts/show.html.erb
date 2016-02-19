@@ -11,8 +11,10 @@
       </div>
       <div class="infos">
         <ul class="list-unstyled">
+          <li><i class="fa fa-building red"></i><%= @post.company %></li>
           <li><i class="fa fa-map-marker red"></i><%= @post.address %></li>
           <li><i class="fa fa-calendar red"></i><%= @post.date_begin.strftime('%A, %b %d') %> - <%= @post.date_end.strftime('%A, %b %d') %></li>
+          <li><i class="fa fa-eur red"></i><%= @post.salary %></li>
         </ul>
       </div>
       <div class="description">
