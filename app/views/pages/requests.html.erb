@@ -20,8 +20,8 @@
                     <%= mission.description %>
                   </div>
                   <div class="col-xs-12 form-answer text-center">
-                    <%= link_to "accept", "#", class: "btn btn-success" %>
-                    <%= link_to "decline", "#", class: "btn btn-danger" %>
+                    <%= link_to "accept", accept_post_mission_path(mission.post, mission), method: :patch, class: "btn btn-success" %>
+                    <%= link_to "decline", decline_post_mission_path(mission.post, mission), method: :patch, class: "btn btn-danger" %>
                   </div>
                 </div>
               </li>

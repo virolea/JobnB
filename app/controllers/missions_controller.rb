@@ -16,6 +16,22 @@ class MissionsController < ApplicationController
     redirect_to post_path(@post)
   end
 
+  def accept
+    @mission = Mission.find(params[:id])
+    @mission.status = "accepted"
+    @mission.save
+
+    redirect_to requests_path
+  end
+
+  def decline
+    @mission = Mission.find(params[:id])
+    @mission.status = "declined"
+    @mission.save
+
+    redirect_to requests_path
+  end
+
   private
 
   def set_post
