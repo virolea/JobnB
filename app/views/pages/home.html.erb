@@ -1,7 +1,7 @@
 <%= render "shared/banner"  %>
 <div class="wrapper" id= "wrapper">
   <div class="container text-center">
-      <h3> It's easy as One, Two, Three!!!</h3> 
+      <h3> It's easy as One, Two, Three!!!</h3>
     <div class="row">
     <div class="col-xs-12 col-sm-4">
         <div class="feature">
@@ -31,7 +31,7 @@
   <div class="col-sm-12 text-center">
     <h2> What our clients say about us: </h2>
   </div>
-</div>  
+</div>
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <div class="carousel-side text-center">
   <!-- Indicators -->
@@ -78,5 +78,15 @@
     </div>
   </div>
 </div>
+
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    $(document).on('ready', function() {
+      $("#scroll-link").click(function() {
+      $('html,body').animate({scrollTop: $('#wrapper').offset().top},'slow');
+    });
+    })
+  <% end %>
+<% end %>
 
 
