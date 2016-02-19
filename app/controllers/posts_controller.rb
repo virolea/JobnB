@@ -39,7 +39,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :description, :date_begin, :date_end, :employee_skill, :employee_name, :photo, :photo_cache, :address)
+    params.require(:post).permit(:title, :description, :date_begin, :date_end, :employee_skill, :employee_name, :photo, :photo_cache, :address, :salary, :company)
   end
 
   def set_post
