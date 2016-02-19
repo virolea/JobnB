@@ -9,10 +9,17 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
   </head>
   <body>
-    <%= render 'shared/navbar'  %>
-    <%= render 'shared/flashes' %>
-    <%= yield %>
-    <%= render 'shared/footer'  %>
+    <nav class="fixed-nav-bar">
+      <%= render 'shared/navbar'  %>
+    </nav>
+    <%= render 'shared/sidesearch'  %>
+
+    <div id="container">
+      <%= render 'shared/flashes' %>
+      <%= yield %>
+      <%= render 'shared/footer'  %>
+    </div>
+
 
     <%= javascript_include_tag "https://maps.google.com/maps/api/js?libraries=places&amp;key=AIzaSyDYED4UykL1lhWjuoNJzckgM8WgT0mgRIo" %>
     <%= javascript_include_tag "https://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js" %>
@@ -20,3 +27,6 @@
     <%= yield(:after_js) %>
   </body>
 </html>
+
+
+
