@@ -1,13 +1,23 @@
-<div class="container-fluid post-card">
+<div class="container-fluid">
   <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+    <div class="post-card">
       <p id="notice"><%= notice %></p>
       <div class="header">
-      <%= cl_image_tag @post.photo, height: 100, width: 100, crop: :fill %>
-      <h2 class="text-center"><%= @post.title %></h2>
+      <ul class="list-unstyled list-inline">
+      <li> <%= cl_image_tag @post.photo, height: 100, width: 100, crop: :fill %></li>
+      <li><h2><%= @post.title %></h2></li>
+      </ul>
       </div>
-
+      <div class="infos">
+        <ul class="list-unstyled">
+          <li><i class="fa fa-map-marker red"></i><%= @post.address %></li>
+          <li><i class="fa fa-calendar red"></i><%= @post.date_begin.strftime('%A, %b %d') %> - <%= @post.date_end.strftime('%A, %b %d') %></li>
+        </ul>
+      </div>
+      <div class="description">
       <p><%= @post.description %></p>
+      </div>
 
       <hr>
       <div class="employee">
@@ -23,6 +33,7 @@
 
       <hr>
       <div id="map"></div>
+      </div>
     </div>
   </div>
 </div>
@@ -35,13 +46,13 @@
 $(document).ready(function() {
 var coord = <%= raw @user_coordinates.to_json %>;
 var handler = Gmaps.build('Google');
-handler.buildMap({ internal: { id: 'map' } }, function(){
+handler.buildMap({ internal: { id: 'map' }, provider: { scrollwheel: false } }, function(){
 marker = handler.addMarkers([
 { "lat": coord.lat, "lng": coord.lng }
 ]);
 handler.bounds.extendWith(marker);
 handler.fitMapToBounds();
-handler.getMap().setZoom(14);
+handler.getMap().setZoom(16);
 });
 })
 <% end %>
