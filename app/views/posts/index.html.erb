@@ -33,7 +33,7 @@
             <%= link_to post_path(post) do %>
               <div class="card-image" style="background-image: url(<%= post.photo.url(:cards) %>)">
                 <div>
-                  <p><%= post.description.first(50) %></p>
+                  <p><%= post.description.first(200) %></p>
                 </div>
               </div>
             <% end %>
