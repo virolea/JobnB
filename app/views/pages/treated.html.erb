@@ -1,1 +1,36 @@
-treated.html.erb
+<%= render 'mininav' %>
+
+<div class="container">
+  <div class="requests-container">
+  <div class="row">
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+      <div class="offers">
+        <div class="panel-header">
+          My requests treated
+        </div>
+        <div>
+          <ul class="list-unstyled requests-list">
+            <% @missions.each do |mission| %>
+              <li id=<%= "mission-#{mission.id}" %>>
+                <div class="row request">
+                  <div class="col-xs-3">
+                    <%= image_tag mission.buying_user.picture, class: "avatar-large" %>
+                  </div>
+                  <div class="col-xs-9">
+                    <%= mission.description %>
+                    <br>
+                    <span class="label label-<%= @status[mission.status] %>"><%= mission.status %></span>
+                  </div>
+                </div>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+
+

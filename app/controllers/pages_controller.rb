@@ -13,5 +13,8 @@ class PagesController < ApplicationController
   end
 
   def treated
+    @missions = Mission.where(selling_user_id: current_user.id).where.not(status: "pending")
+    @status = { "accepted" => "success",
+                "declined" => "danger" }
   end
 end

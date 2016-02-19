@@ -26,7 +26,7 @@
       })
     <% end %>
   <% end %>
-<% elsif current_page?(action: "profile") %>
+<% elsif current_page?(action: "treated") %>
   <% content_for(:after_js) do %>
     <%= javascript_tag do %>
       $(document).on('ready', function() {
