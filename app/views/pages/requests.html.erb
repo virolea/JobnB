@@ -12,12 +12,14 @@
           <ul class="list-unstyled requests-list">
             <% Mission.where(selling_user_id: current_user.id).each do |mission| %>
               <li>
-                <div class="row">
+                <div class="row request">
                   <div class="col-xs-3">
                     <%= image_tag mission.buying_user.picture, class: "avatar-large" %>
                   </div>
                   <div class="col-xs-9">
                     <%= mission.description %>
+                  </div>
+                  <div class="col-xs-12 form-answer text-center">
                     <%= link_to "accept", "#", class: "btn btn-success" %>
                     <%= link_to "decline", "#", class: "btn btn-danger" %>
                   </div>
@@ -31,5 +33,15 @@
   </div>
   </div>
 </div>
+
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    $(document).on('ready', function() {
+      $(".request").hover(function () {
+        $(this).children('.form-answer').slideToggle();
+      });
+    })
+  <% end %>
+<% end %>
 
 
