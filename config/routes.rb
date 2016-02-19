@@ -17,5 +17,5 @@ Rails.application.routes.draw do
 
   get 'dashboard', to: 'pages#dashboard'
   get 'requests', to: 'pages#requests'
-  get 'profile', to: 'pages#profile'
+  get 'treated', to: 'pages#treated'
 end
