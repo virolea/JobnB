@@ -40,6 +40,10 @@
             <div class="card-title text-center">
               <h3><%= post.title %></h3>
             </div>
+            <div class="card-user">
+              <%= image_tag post.user.picture, class: "avatar" %>
+              <%= post.user.first_name %>
+            </div>
           </div>
       </div>
     <%end%>
